@@ -42,7 +42,7 @@ body{
     left: 0;
     height: 100%;
     width: 60px;
-    background: var(--secondary-color) ;
+    background: var(--primary-color) ;
     padding: 6px 14px;
     transition: all 0.5s ease;
 
