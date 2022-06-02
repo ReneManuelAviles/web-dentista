@@ -20,6 +20,11 @@ const button = document.querySelector('button'),
         closeIcon.addEventListener('click', () => {
             toast.classList.remove('active');
 
+            setTimeout(() => {
+                progress.classList.remove('active');
+                
+            } ,300);
+
            
            
             
