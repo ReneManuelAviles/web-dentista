@@ -172,7 +172,7 @@ body{
     display: relative;
     padding: 10px 6px;
     height: 60px;
-    background: var(--text-color);
+    background: var(--primary-color);
     
 }
 .profile_content .profile .profile_details{
