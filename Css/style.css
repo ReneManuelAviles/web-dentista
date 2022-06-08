@@ -4,18 +4,17 @@
 /* VARIABLES CSS */
 :root{
     /* tipografia  */
-    --big-size: 4rem;
-    --h1-size: 3rem;
-    --h2-size: 2.5rem;
-    --h3-size: 2rem;
-    --h4-size: 1.5rem;
-    --h5-size: 1.3rem;
+    --big-size: 4.5rem;
+    --h1-size: 3.5rem;
+    --h2-size: 3rem;
+    --h3-size: 2.75rem;
+    --h4-size: 2.5rem;
+    --h5-size: 2rem;
     --text-size: 1rem;
 
     --bold-weight: 600;
     --semi-weight: 500;
     --regular-weight: 400;
-
     
     /* colores */
     --body-color:#F7FAFD;
@@ -30,6 +29,7 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     transition: all .3s ease-in-out;
+    line-height: 1.4;
 }
 
 html{
@@ -43,12 +43,38 @@ a{
 ul,li{
     list-style: none;
 }
+
+img{
+    width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: 'Poppins', sans-serif;
+    font-weight: var(--bold-weight);
 }
 
 i{
     cursor: pointer;
+}
+
+h1{
+    font-size: var(--h1-size);
+}
+
+h2{
+    font-size: var(--h2-size);
+}
+
+h3{
+    font-size: var(--h3-size);
+}
+
+h4{
+    font-size: var(--h4-size);
+}
+
+h5{
+    font-size: var(--h5-size);
 }
 
 /* CLASES REUSABLES */
@@ -59,14 +85,52 @@ i{
 
 .section{
     min-height: 95vh;
-    padding: 4rem 0rem 2rem;
+    padding: 4.5rem 0rem 2rem;
+}
+
+.big-text{
+    font-size: var(--big-size);
+    font-weight: var(--bold-weight);
+}
+
+.text-color{
+    color: var(--primary-color);
+}
+
+.flex{
+    display: flex;  
+    gap: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.btn-primary{
+    background-color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
+    border: 2px solid;
+    padding: 1rem  2rem;
+    position: relative;
+    margin: 10px 0;  
+    display:block;    
+    max-width: max-content;
+    z-index: 1;
+}
+
+
+.btn-primary:hover{
+    background-color: #1B3A65;
+    
 }
 
 /* NAVBAR */
-.navbar{
+nav{
     position:fixed;
     width: 100%;
-     z-index:1;
+    background-color: var(--secondary-color);
+    z-index: 2;
 }
 
 .navbar_container{
@@ -105,11 +169,57 @@ i{
     font-weight: var(--semi-weight);
 }
 
+.navbar-scrolled{
+    background-color: var(--body-color);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+
+/* FOOTER */
+.footer{
+    background-color:var(--text-color);
+    padding: 4rem 0;
+}
+.footer{
+    color: var(--body-color);
+}
+
+footer h5{
+    color: var(--primary-color);
+}
+
+
+.footer_container{
+
+    gap: 3rem;
+    justify-content: space-around;
+}
+
+
 
 @media screen and (max-width: 992px){
     .container{
         max-width: 80%;
     }
+
+}
+    
+@media screen and (max-width: 768px){
+    :root{
+        /* tipografia  */
+        --big-size: 3rem;
+        --h1-size: 2.5rem;
+        --h2-size: 2rem;
+        --h3-size: 1.5rem;
+        --h4-size: 1rem;
+        --h5-size: .7rem;
+        --text-size: .5rem;
+    }
+
+    .flex{
+        flex-direction: column-reverse;
+    }
+
     .navbar_menu{
         position: fixed;
         top: -100rem;
@@ -131,91 +241,16 @@ i{
         display: block;
     }
 }
-/*Seccion Servicios*/
-.servicios_container{
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(--primary-color, --secondary-color 50%, --primary-color 50%, --secondary-color);
-}
-.container{
-    width: 1100px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
 
-}
-.container .box{
-    margin-top: 20px;
-    position: relative;
-    width: 320px;
-    background: #fff;
-    padding: 100px 40px 60px;
-    box-shadow:  0 15px 45px rgba(0,0,0,.1);
-}
-.container .box:before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #4db29e, #d5e6f7);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform .5s;
-
-}
-.container .box:hover:before{
-    transform: scaleY(1);
-    transform-origin: bottom;
-    transition: transform .5s;
-
-
-}
-.container .box img{
-    position: absolute;
-    left: 40px;
-    top: 80px;
-    font-size: 4rem;
-    font-weight: 800;
-    
-    opacity: 0.1;
-    transition: .5s;
-}
-.container .box:hover img{
-   opacity: 1;
-   color: #fff;
-   transform: translateY(-40px);
-
-}
-
-.container .box h3{
-    position: relative;
-    font-size: 1.5em;
-    
-    color: #333;
-    transition: .5s;
-    
-    
-}
-
-.container .box:hover h3{
-    color: #fff;
-
-
-}
-.container .box p{
-    position: relative;
-    
-    color: #555;
-    transition: .5s;
-    
-    
-}
-.container .box:hover p{
-    color: #fff;
-
+@media screen and (max-width: 368px){
+    :root{
+        /* tipografia  */
+        --big-size: 2.75rem;
+        --h1-size: 2.25rem;
+        --h2-size: 1.5rem;
+        --h3-size: 1rem;
+        --h4-size: .75rem;
+        --h5-size: .5rem;
+        --text-size: .3rem;
+    }
 }
